@@ -188,14 +188,6 @@ text-align: center;
   width: 300px;
 }
 
-/* Homepage Styles */
-
-
-
-
-
-
-/* Single Show Page Styles */
 .singleshow {
   display: flex;
   margin: 2rem 0;
@@ -227,7 +219,6 @@ border: 1px solid rgba(11, 11, 11, 0.3);
   color: var(--offwhite-color);
 }
 
-/* About page Styles */
 .about {
   margin: 2rem 0;
   width: 100%;
@@ -246,7 +237,7 @@ border: 1px solid rgba(11, 11, 11, 0.3);
 .about__info > p {
   font-size: 1.4rem;
   margin: 1rem 0;
-} */
+} 
 
 .about__info > div > ul > li {
   margin-left: 2rem;
