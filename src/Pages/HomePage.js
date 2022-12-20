@@ -10,6 +10,7 @@ const HomePage = () => {
 
   return (
     <div className="homePage">
+      <h1>Hi</h1>
       {loading ? (
         <Loader />
       ) : (
