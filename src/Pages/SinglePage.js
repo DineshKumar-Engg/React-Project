@@ -1,9 +1,6 @@
 import { useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
-// Context
 import ShowsContext from "../Context/showsContext";
-
-// Components
 import Loader from "../components/Loader";
 
 const SinglePage = () => { 
@@ -45,7 +42,7 @@ const SinglePage = () => {
                 </span>
               ))}
             <p>
-              <strong>Status:</strong> {singleShow.status && singleShow.status}
+              <strong>Status:</strong> {singleShow.status}
             </p>
             <p>
               <strong>Rating:</strong>{" "}

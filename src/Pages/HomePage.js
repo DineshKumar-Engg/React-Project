@@ -1,10 +1,5 @@
 import { useContext } from "react";
-
-// Context
 import ShowsContext from "../Context/showsContext";
-
-// Components
-//import Search from "../components/Search";
 import ListItem from "../components/ListItem";
 import Loader from "../components/Loader";
 

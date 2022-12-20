@@ -6,7 +6,6 @@ import {
   SEARCH_SHOWS,
   SET_LOADING,
   SET_SINGLE_SHOW,
-  CLEAR_SINGLE_SHOW,
 } from "../Context/types";
 
 const ShowsState = (props) => {
@@ -47,11 +46,6 @@ const ShowsState = (props) => {
     });
   };
 
-  const clearSingleShow = () => {
-    dispatch({
-      type: CLEAR_SINGLE_SHOW,
-    });
-  };
 
   return (
     <ShowContext.Provider
@@ -61,7 +55,6 @@ const ShowsState = (props) => {
         loading: state.loading,
         searchShows,
         getSingleShow,
-        clearSingleShow,
       }}
     >
       {props.children}

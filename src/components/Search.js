@@ -8,12 +8,11 @@ import { useState, useContext } from "react";
 import ShowContext from "../Context/showsContext";
 import { Alert } from "@mui/material";
 import alertsContext from "../Alerts/alertsContext";
-//import Alert from "./Alert";
+
 const Search = () => {
   const [value, setValue] = useState(""); ////-------------------------->>>>  RadioButton value
   const [placeholder, setPlaceholder] = useState("Search"); //////////---------------->>>>>> placeholder change value
   const [inputValue, setInputValue] = useState(""); ////////////--------------<>>>>>>>>>> user input value
-
   const showsContext = useContext(ShowContext);
   const { searchShows } = showsContext;
 
@@ -27,12 +26,9 @@ const Search = () => {
   };
 
   useEffect(() => {
-    if(inputValue === "" && inputValue === "!@#$%^&*()_+/*-+"){
-      setAlert("Please Enter valid Movie...")
-    }
-    else{
-      setAlert("You got the Result...")
+    if(inputValue !== "" && inputValue !== "!@#$%^&*()_+/*-+"){
       searchShows(inputValue);
+      setAlert("You got the Result...")
     }
   }, [inputValue]);
 

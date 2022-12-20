@@ -2,7 +2,6 @@ import {
   SEARCH_SHOWS,
   SET_LOADING,
   SET_SINGLE_SHOW,
-  CLEAR_SINGLE_SHOW,
 } from "../Context/types";
 
 const showsReducer = (state, action) => {
@@ -24,11 +23,7 @@ const showsReducer = (state, action) => {
         singleShow: action.payload,
         loading: false,
       };
-    case CLEAR_SINGLE_SHOW:
-      return {
-        ...state,
-        singleShow: {},
-      };
+    
     default:
       return state;
   }
