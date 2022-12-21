@@ -1,4 +1,5 @@
 import {
+  SEARCH_ACTOR,
   SEARCH_SHOWS,
   SET_LOADING,
   SET_SINGLE_SHOW,
@@ -15,6 +16,12 @@ const showsReducer = (state, action) => {
       return {
         ...state,
         shows: action.payload,
+        loading: false,
+      };
+      case SEARCH_ACTOR:
+      return {
+        ...state,
+        actor: action.payload,
         loading: false,
       };
     case SET_SINGLE_SHOW:

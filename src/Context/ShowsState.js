@@ -6,11 +6,17 @@ import {
   SEARCH_SHOWS,
   SET_LOADING,
   SET_SINGLE_SHOW,
+  SEARCH_ACTOR,
 } from "../Context/types";
 
+
+
 const ShowsState = (props) => {
+
+
   const initialState = {
     shows: [],
+    actor: [],
     singleShow: {},
     loading: false,
   };
@@ -18,7 +24,7 @@ const ShowsState = (props) => {
 
   const searchShows = async (inputValue) => {
     dispatch({ type: SET_LOADING });
-    
+
     const { data } = await axios.get(
       `https://api.tvmaze.com/search/shows?q=${inputValue}`
     );
@@ -29,7 +35,19 @@ const ShowsState = (props) => {
       payload: data,
     });
   };
-  
+
+
+  const searchActor = async (id) => {
+
+    dispatch({ type: SET_LOADING });
+
+    const { data } = await axios.get(`https://api.tvmaze.com/people/${id}/castcredits?embed=show`);
+    dispatch({
+      type: SEARCH_ACTOR,
+      payload: data,
+    });
+
+  };
 
   const getSingleShow = async (id) => {
     dispatch({
@@ -37,9 +55,6 @@ const ShowsState = (props) => {
     });
 
     const { data } = await axios.get(`https://api.tvmaze.com/shows/${id}`);
-
-    console.log(data);
-
     dispatch({
       type: SET_SINGLE_SHOW,
       payload: data,
@@ -51,9 +66,11 @@ const ShowsState = (props) => {
     <ShowContext.Provider
       value={{
         shows: state.shows,
+        actor: state.actor,
         singleShow: state.singleShow,
         loading: state.loading,
         searchShows,
+        searchActor,
         getSingleShow,
       }}
     >
