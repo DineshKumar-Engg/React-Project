@@ -15,15 +15,15 @@ const Search = () => {
   const [placeholder, setPlaceholder] = useState("Search"); //--------------->>>>>> placeholder change value
   const [inputValue, setInputValue] = useState(""); //------------>>>>>>>>>> user input value
   const [actorData, setActorData] = useState([]);
+
   const showsContext = useContext(ShowContext);
 
   const { searchShows, searchActor, shows, actor,loading } = showsContext;
   const HandleChange = (event) => {
     setValue(event.target.value);
     const data = event.target.value;
-    if (data === "actor") setPlaceholder("Eg:Akon,Deniel Redcliffe"); console.log(value);;
+    if (data === "actor") setPlaceholder("Eg:Akon,Deniel Redcliffe");
     if (data === "shows") setPlaceholder("Eg:Friends,Girls");
-    setActorData([]);
     setInputValue("");
   };
 
@@ -50,12 +50,7 @@ const Search = () => {
     <div>
       <div className="RadioBtn">
         <FormControl>
-          <FormLabel
-            id="demo-controlled-radio-buttons-group"
-            className="RadioBtn"
-          >
-            Choose Your Search
-          </FormLabel>
+          <h3 className="Radio-title">Choose Your Search</h3>
           <RadioGroup
             aria-labelledby="demo-controlled-radio-buttons-group"
             name="controlled-radio-buttons-group"

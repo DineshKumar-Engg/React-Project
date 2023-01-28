@@ -13,19 +13,7 @@ const Navigation = () => {
           </div> 
         <ul className='nav_ul'>
           <li className='nav_li'>
-            <Link to='/Home' className='active' >Home</Link>
-          </li>
-          <li className='nav_li'>
-            <Link to='/about'>About</Link>
-          </li>
-          <li className='nav_li'>
-            <Link to='/TVShow'>Tv Show</Link>
-          </li>
-          <li className='nav_li'>
-            <Link to='/WebSeries'>Web Series</Link>
-          </li>
-          <li className='nav_li'>
-            <Link to='/LogIn'>Login</Link>
+            <Link to='/' className='active' >Home</Link>
           </li>
         </ul>
       </nav>
